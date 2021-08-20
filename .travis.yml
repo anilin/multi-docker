@@ -13,12 +13,9 @@ after_success:
   - docker build -t ccm/multi-client ./client
   - docker build -t ccm/multi-nginx ./nginx
   - docker build -t ccm/multi-server ./server
-  - docker build -t ccm/multi-worker ./worker
-  
+  - docker build -t ccm/multi-worker ./worker  
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
   - docker push ccm/multi-client
   - docker push ccm/multi-nginx
   - docker push ccm/multi-server
   - docker push ccm/multi-worker
-  
